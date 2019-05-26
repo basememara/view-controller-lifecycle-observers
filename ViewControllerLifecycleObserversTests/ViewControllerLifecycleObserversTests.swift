@@ -11,37 +11,37 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 
 	func testViewWillAppearObserverIsAddedAsChild() {
 		assertObserverIsAddedAsChild(when: { sut in
-			sut.onViewWillAppear {}
+			sut.viewWillAppear { _ in }
 		})
 	}
 	
 	func testViewWillAppearObserverViewIsAddedAsSubview() {
 		assertObserverViewIsAddedAsSubview(when: { sut in
-			sut.onViewWillAppear {}
+			sut.viewWillAppear { _ in }
 		})
 	}
 	
 	func testViewWillAppearObserverViewIsInvisible() {
 		assertObserverViewIsInvisible(when: { sut in
-			sut.onViewWillAppear {}
+			sut.viewWillAppear { _ in }
 		})
 	}
 	
 	func testViewWillAppearObserverFiresCallback() {
 		assertObserver(
-			firesCallback: { $0.onViewWillAppear },
+			firesCallback: { $0.viewWillAppear },
 			when: { $0.viewWillAppear(false) })
 	}
 	
 	func testCanRemoveViewWillAppearObserver() {
 		assertCanRemoveObserver(when: { sut in
-			sut.onViewWillAppear {}
+			sut.viewWillAppear { _ in }
 		})
 	}
 	
 	func testCanRemoveViewWillAppearObserverView() {
 		assertCanRemoveObserverView(when: { sut in
-			sut.onViewWillAppear {}
+			sut.viewWillAppear { _ in }
 		})
 	}
 	
@@ -49,37 +49,37 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 	
 	func testViewDidAppearObserverIsAddedAsChild() {
 		assertObserverIsAddedAsChild(when: { sut in
-			sut.onViewDidAppear {}
+			sut.viewDidAppear { _ in }
 		})
 	}
 	
 	func testViewDidAppearObserverViewIsAddedAsSubview() {
 		assertObserverViewIsAddedAsSubview(when: { sut in
-			sut.onViewDidAppear {}
+			sut.viewDidAppear { _ in }
 		})
 	}
 	
 	func testViewDidAppearObserverViewIsInvisible() {
 		assertObserverViewIsInvisible(when: { sut in
-			sut.onViewDidAppear {}
+			sut.viewDidAppear { _ in }
 		})
 	}
 	
 	func testViewDidAppearObserverFiresCallback() {
 		assertObserver(
-			firesCallback: { $0.onViewDidAppear },
+			firesCallback: { $0.viewDidAppear },
 			when: { $0.viewDidAppear(false) })
 	}
 	
 	func testCanRemoveViewDidAppearObserver() {
 		assertCanRemoveObserver(when: { sut in
-			sut.onViewDidAppear {}
+			sut.viewDidAppear { _ in }
 		})
 	}
 	
 	func testCanRemoveViewDidAppearObserverView() {
 		assertCanRemoveObserverView(when: { sut in
-			sut.onViewDidAppear {}
+			sut.viewDidAppear { _ in }
 		})
 	}
 	
@@ -87,37 +87,37 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 	
 	func testViewWillDisappearObserverIsAddedAsChild() {
 		assertObserverIsAddedAsChild(when: { sut in
-			sut.onViewWillDisappear {}
+			sut.viewWillDisappear { _ in }
 		})
 	}
 	
 	func testViewWillDisappearObserverViewIsAddedAsSubview() {
 		assertObserverViewIsAddedAsSubview(when: { sut in
-			sut.onViewWillDisappear {}
+			sut.viewWillDisappear { _ in }
 		})
 	}
 	
 	func testViewWillDisappearObserverViewIsInvisible() {
 		assertObserverViewIsInvisible(when: { sut in
-			sut.onViewWillDisappear {}
+			sut.viewWillDisappear { _ in }
 		})
 	}
 	
 	func testViewWillDisappearObserverFiresCallback() {
 		assertObserver(
-			firesCallback: { $0.onViewWillDisappear },
+			firesCallback: { $0.viewWillDisappear },
 			when: { $0.viewWillDisappear(false) })
 	}
 	
 	func testCanRemoveViewWillDisappearObserver() {
 		assertCanRemoveObserver(when: { sut in
-			sut.onViewWillDisappear {}
+			sut.viewWillDisappear { _ in }
 		})
 	}
 	
 	func testCanRemoveViewWillDisappearObserverView() {
 		assertCanRemoveObserverView(when: { sut in
-			sut.onViewWillDisappear {}
+			sut.viewWillDisappear { _ in }
 		})
 	}
 	
@@ -125,37 +125,37 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 	
 	func testViewDidDisappearObserverIsAddedAsChild() {
 		assertObserverIsAddedAsChild(when: { sut in
-			sut.onViewDidDisappear {}
+			sut.viewDidDisappear { _ in }
 		})
 	}
 	
 	func testViewDidDisappearObserverViewIsAddedAsSubview() {
 		assertObserverViewIsAddedAsSubview(when: { sut in
-			sut.onViewDidDisappear {}
+			sut.viewDidDisappear { _ in }
 		})
 	}
 	
 	func testViewDidDisappearObserverViewIsInvisible() {
 		assertObserverViewIsInvisible(when: { sut in
-			sut.onViewDidDisappear {}
+			sut.viewDidDisappear { _ in }
 		})
 	}
 	
 	func testViewDidDisappearObserverFiresCallback() {
 		assertObserver(
-			firesCallback: { $0.onViewDidDisappear },
+			firesCallback: { $0.viewDidDisappear },
 			when: { $0.viewDidDisappear(false) })
 	}
 	
 	func testCanRemoveViewDidDisappearObserver() {
 		assertCanRemoveObserver(when: { sut in
-			sut.onViewDidDisappear {}
+			sut.viewDidDisappear { _ in }
 		})
 	}
 	
 	func testCanRemoveViewDidDisappearObserverView() {
 		assertCanRemoveObserverView(when: { sut in
-			sut.onViewDidDisappear {}
+			sut.viewDidDisappear { _ in }
 		})
 	}
 	
@@ -170,10 +170,10 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		let exp = expectation(description: "Wait for lifecycle callbacks")
 		let view = UIViewController()
 		
-		view.onViewWillAppear { [weak view, weak navigation] in
-			view?.onViewDidAppear {
-				view?.onViewWillDisappear {
-					view?.onViewDidDisappear {
+		view.viewWillAppear { [weak view, weak navigation] _ in
+			view?.viewDidAppear { _ in
+				view?.viewWillDisappear { _ in
+					view?.viewDidDisappear { _ in
 						exp.fulfill()
 					}
 				}
@@ -195,10 +195,10 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		let exp = expectation(description: "Wait for lifecycle callbacks")
 		let view = UIViewController()
 		
-		view.onViewWillAppear { [weak view, weak navigation] in
-			view?.onViewDidAppear {
-				view?.onViewWillDisappear {
-					view?.onViewDidDisappear {
+		view.viewWillAppear { [weak view, weak navigation] _ in
+			view?.viewDidAppear { _ in
+				view?.viewWillDisappear { _ in
+					view?.viewDidDisappear { _ in
 						exp.fulfill()
 					}
 				}
@@ -218,7 +218,7 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		
 		action(sut)
 		
-		XCTAssertEqual(sut.childViewControllers.count, 1, file: file, line: line)
+		XCTAssertEqual(sut.children.count, 1, file: file, line: line)
 	}
 	
 	func assertObserverViewIsAddedAsSubview(when action: @escaping (UIViewController) -> Void, file: StaticString = #file, line: UInt = #line) {
@@ -226,7 +226,7 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		
 		action(sut)
 		
-		let observer = sut.childViewControllers.first
+		let observer = sut.children.first
 		XCTAssertEqual(observer?.view.superview, sut.view, file: file, line: line)
 	}
 	
@@ -235,18 +235,22 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		
 		action(sut)
 		
-		let observer = sut.childViewControllers.first
+		let observer = sut.children.first
 		XCTAssertEqual(observer?.view?.isHidden, true, file: file, line: line)
 	}
 	
 	func assertObserver(
-		firesCallback callback: (UIViewController) -> ((@escaping () -> Void) -> Observer), when action: @escaping (UIViewController) -> Void, file: StaticString = #file, line: UInt = #line) {
+        firesCallback callback: (UIViewController) -> ((@escaping (UIViewController?) -> Void) -> ViewControllerLifecycleObserver),
+        when action: @escaping (UIViewController) -> Void,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
 		let sut = UIViewController()
 		
 		var callCount = 0
-		_ = callback(sut)({ callCount += 1 })
+		_ = callback(sut)({ _ in callCount += 1 })
 		
-		let observer = sut.childViewControllers.first!
+		let observer = sut.children.first!
 		XCTAssertEqual(callCount, 0, file: file, line: line)
 		
 		action(observer)
@@ -256,15 +260,15 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 		XCTAssertEqual(callCount, 2, file: file, line: line)
 	}
 	
-	func assertCanRemoveObserver(when action: @escaping (UIViewController) -> Observer, file: StaticString = #file, line: UInt = #line) {
+	func assertCanRemoveObserver(when action: @escaping (UIViewController) -> ViewControllerLifecycleObserver, file: StaticString = #file, line: UInt = #line) {
 		let sut = UIViewController()
 		
 		action(sut).remove()
 		
-		XCTAssertEqual(sut.childViewControllers.count, 0, file: file, line: line)
+		XCTAssertEqual(sut.children.count, 0, file: file, line: line)
 	}
 	
-	func assertCanRemoveObserverView(when action: @escaping (UIViewController) -> Observer, file: StaticString = #file, line: UInt = #line) {
+	func assertCanRemoveObserverView(when action: @escaping (UIViewController) -> ViewControllerLifecycleObserver, file: StaticString = #file, line: UInt = #line) {
 		let sut = UIViewController()
 		
 		action(sut).remove()
