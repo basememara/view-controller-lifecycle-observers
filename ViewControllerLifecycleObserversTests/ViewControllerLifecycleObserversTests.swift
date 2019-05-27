@@ -158,6 +158,32 @@ class ViewControllerLifecycleObserversTests: XCTestCase {
 			sut.onViewDidDisappear {}
 		})
 	}
+    
+    func testObserverReturningController() {
+        assertObserverIsAddedAsChild(when: { sut in
+            sut.onViewWillAppear {
+                XCTAssertEqual(sut, $0)
+            }
+        })
+        
+        assertObserverIsAddedAsChild(when: { sut in
+            sut.onViewDidAppear {
+                XCTAssertEqual(sut, $0)
+            }
+        })
+        
+        assertObserverIsAddedAsChild(when: { sut in
+            sut.onViewWillDisappear {
+                XCTAssertEqual(sut, $0)
+            }
+        })
+        
+        assertObserverIsAddedAsChild(when: { sut in
+            sut.onViewDidDisappear {
+                XCTAssertEqual(sut, $0)
+            }
+        })
+    }
 	
 	// MARK: Integration Tests
 	

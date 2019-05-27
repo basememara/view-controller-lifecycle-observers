@@ -21,6 +21,18 @@ public extension UIViewController {
 			viewWillAppearCallback: callback
 		)
 	}
+    
+    /// Event that notifies the view controller is about to be added to a view hierarchy.
+    ///
+    /// - Parameter callback: The closure to execute.
+    /// - Returns: The observer for unsubscribing to event with the view controller instance.
+    @discardableResult
+    func onViewWillAppear(run callback: @escaping (UIViewController) -> Void) -> Observer {
+        return ViewControllerLifecycleObserver(
+            parent: self,
+            viewWillAppearCallback: { callback(self) }
+        )
+    }
 	
     /// Event that notifies the view controller was added to a view hierarchy.
     ///
@@ -33,6 +45,18 @@ public extension UIViewController {
 			viewDidAppearCallback: callback
 		)
 	}
+    
+    /// Event that notifies the view controller was added to a view hierarchy.
+    ///
+    /// - Parameter callback: The closure to execute.
+    /// - Returns: The observer for unsubscribing to event with the view controller instance.
+    @discardableResult
+    func onViewDidAppear(run callback: @escaping (UIViewController) -> Void) -> Observer {
+        return ViewControllerLifecycleObserver(
+            parent: self,
+            viewDidAppearCallback: { callback(self) }
+        )
+    }
 	
     /// Event that notifies the view controller is about to be removed from a view hierarchy.
     ///
@@ -45,18 +69,42 @@ public extension UIViewController {
 			viewWillDisappearCallback: callback
 		)
 	}
-	
+    
+    /// Event that notifies the view controller is about to be removed from a view hierarchy.
+    ///
+    /// - Parameter callback: The closure to execute.
+    /// - Returns: The observer for unsubscribing to event with the view controller instance.
+    @discardableResult
+    func onViewWillDisappear(run callback: @escaping (UIViewController) -> Void) -> Observer {
+        return ViewControllerLifecycleObserver(
+            parent: self,
+            viewWillDisappearCallback: { callback(self) }
+        )
+    }
+    
     /// Event that notifies the view controller was removed from a view hierarchy.
     ///
     /// - Parameter callback: The closure to execute.
     /// - Returns: The observer for unsubscribing to event.
-	@discardableResult
-	func onViewDidDisappear(run callback: @escaping () -> Void) -> Observer {
-		return ViewControllerLifecycleObserver(
-			parent: self,
-			viewDidDisappearCallback: callback
-		)
-	}
+    @discardableResult
+    func onViewDidDisappear(run callback: @escaping () -> Void) -> Observer {
+        return ViewControllerLifecycleObserver(
+            parent: self,
+            viewDidDisappearCallback: callback
+        )
+    }
+    
+    /// Event that notifies the view controller was removed from a view hierarchy.
+    ///
+    /// - Parameter callback: The closure to execute.
+    /// - Returns: The observer for unsubscribing to event with the view controller instance.
+    @discardableResult
+    func onViewDidDisappear(run callback: @escaping (UIViewController) -> Void) -> Observer {
+        return ViewControllerLifecycleObserver(
+            parent: self,
+            viewDidDisappearCallback: { callback(self) }
+        )
+    }
 }
 
 private class ViewControllerLifecycleObserver: UIViewController, Observer {
